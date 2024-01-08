@@ -1,4 +1,7 @@
-name: NX1 Static Service Deploy
+# Description: This file is used to define the deployment manifest for your application.
+# Remind to update the env_id and app_id with your target env and app id
+
+name: NX1 Deploy a Static Service (Example)
 
 on:
   workflow_dispatch:
@@ -9,7 +12,7 @@ permissions:
   deployments: write
 
 jobs:
-  static_deploy:
+  static-example:
     runs-on: ubuntu-latest
     name: NX1 Action
     steps:
