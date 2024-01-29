@@ -17,7 +17,17 @@ function App() {
         >
           Learn React
         </a>
+        
+        
       </header>
+      <a
+          className="App-link"
+          href="https://nx1.io"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn More About NX1.io
+        </a>
     </div>
   );
 }
