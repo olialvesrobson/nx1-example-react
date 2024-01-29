@@ -18,11 +18,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Optional step: Detect app and construct Dockerfile using Nixpacks
-      - name: NX1 Build with Nixpacks
-        uses: nx1-io/app-copilot-action@main
+      - uses: actions/setup-node@v4
         with:
-          operation: 'build-nixpacks'
+          node-version: '18.x'
+
+      - run: npm ci
+      - run: npm run build
 
       - name: NX1 Prepare Deployment
         uses: nx1-io/app-copilot-action@main
