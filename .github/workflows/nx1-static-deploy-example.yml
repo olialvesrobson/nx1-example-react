@@ -45,12 +45,12 @@ jobs:
           service: 'static-react'
 
       # Optional step: Migrate database
-      - name: NX1 Migrate Service - static-react
-        uses: nx1-io/app-copilot-action@main
-        with:
-          operation: 'run'
-          service: 'static-react'
-          command: 'uname -a' # replace with your migration command
+      # - name: NX1 Migrate Service - static-react
+      #   uses: nx1-io/app-copilot-action@main
+      #   with:
+      #     operation: 'run'
+      #     service: 'static-react'
+      #     command: 'uname -a' # replace with your migration command
 
 
 # rev:1
