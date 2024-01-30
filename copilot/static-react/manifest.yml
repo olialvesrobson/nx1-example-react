@@ -1,0 +1,3 @@
+files:
+  - source: build/
+    recursive: true
