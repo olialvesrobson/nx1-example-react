@@ -30,8 +30,8 @@ jobs:
         uses: nx1-io/app-copilot-action@main
         with:
           operation: 'prepare'
-          env_id: '6a5f5001-2732-4670-a46c-7a97813d0ebc' # @TODO: update with your target NX1 env id
-          app_id: '9b0b7b69-2e42-436b-ab81-98cebf72bd39' # @TODO: update with your NX1 app id
+          env_id: '263a9cf9-f5b7-4cbe-9a58-8ac936c4545d' # @TODO: update with your target NX1 env id
+          app_id: '9b56cbf6-4258-44bf-9dad-5bc4f5aee8c6' # @TODO: update with your NX1 app id
           api_token: ${{ secrets.APP_TOKEN }}
 
       - name: NX1 Assume Role
