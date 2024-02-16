@@ -1,46 +1,46 @@
-# Description: This file is used to define the deployment manifest for your application.
-# Remind to update the env_id and app_id with your target env and app id
+  # Description: This file is used to define the deployment manifest for your application.
+  # Remind to update the env_id and app_id with your target env and app id
 
-name: NX1 Deploy a Static Service (my-simple-react-app)
+  name: NX1 Deploy a Static Service (my-simple-react-app)
 
-on:
-  workflow_dispatch:
+  on:
+    workflow_dispatch:
 
-permissions:
-  id-token: write
-  contents: read
-  deployments: write
+  permissions:
+    id-token: write
+    contents: read
+    deployments: write
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    name: NX1 Action
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+  jobs:
+    deploy:
+      runs-on: ubuntu-latest
+      name: NX1 Action
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '18.x'
+        - uses: actions/setup-node@v4
+          with:
+            node-version: '18.x'
 
-      - run: npm ci
-      - run: npm run build
+        - run: npm ci
+        - run: npm run build
 
-      - name: NX1 Prepare Deployment
-        uses: nx1-io/app-copilot-action@main
-        with:
-          operation: 'prepare'
-          env_id: '263a9cf9-f5b7-4cbe-9a58-8ac936c4545d' # @TODO: update with your target NX1 env id
-          app_id: '9b56cbf6-4258-44bf-9dad-5bc4f5aee8c6' # @TODO: update with your NX1 app id
-          api_token: ${{ secrets.APP_TOKEN }}
+        - name: NX1 Prepare Deployment
+          uses: nx1-io/app-copilot-action@main
+          with:
+            operation: 'prepare'
+            env_id: '263a9cf9-f5b7-4cbe-9a58-8ac936c4545d' # @TODO: update with your target NX1 env id
+            app_id: '9b56cbf6-4258-44bf-9dad-5bc4f5aee8c6' # @TODO: update with your NX1 app id
+            api_token: ${{ secrets.APP_TOKEN }}
 
-      - name: NX1 Assume Role
-        uses: nx1-io/app-copilot-action@main
-        with:
-          operation: 'assume-role'
+        - name: NX1 Assume Role
+          uses: nx1-io/app-copilot-action@main
+          with:
+            operation: 'assume-role'
 
-      - name: NX1 Deploy Static Service
-        uses: nx1-io/app-copilot-action@main
-        with:
-          operation: 'deploy'
-          service: 'my-simple-react-app' # @TODO: update with your NX1 service nam
+        - name: NX1 Deploy Static Service
+          uses: nx1-io/app-copilot-action@main
+          with:
+            operation: 'deploy'
+            service: 'my-simple-react-app' # @TODO: update with your NX1 service nam

@@ -26,7 +26,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn More About NX1.io
+          Learn react
         </a>
     </div>
   );
